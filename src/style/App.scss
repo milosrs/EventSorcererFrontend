@@ -1,0 +1,132 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+.TextCenter {
+  text-align: center;
+  margin-top: 25%;
+}
+
+.TextCentered {
+  margin-top: 3%;
+  margin-left: 40%;
+  margin-bottom: 3%;
+}
+
+.Page {
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.Flex{
+  display: flex !important;
+  flex-direction: row;
+}
+
+.UnderMenu {
+  flex-grow: 10;
+  display: flex;
+  flex-direction: row;
+}
+
+.SideMenu {
+  border: 5px;
+  border-color: #46C2FF;
+  border-style: solid;
+  border-collapse: collapse;
+  background-color: #343a40;
+  width: 20%;
+  height: 100%;
+
+  .SideMenuCollapsed {
+    background-color: #5C6166;
+    
+    
+
+    .SideMenuCollapsedItem {
+      padding-left: 15%;
+    }
+  }
+
+  .Card {
+    background-color: #343a40;
+
+    :hover{
+      color:gray;
+    }
+  }
+
+  .SideMenuIcon{
+    color: white;
+  }
+
+  .SideMenuText {
+    color: white;
+  }
+
+  .CardBody {
+    width: 100%;
+  }
+}
+
+.MainMenu {
+  height:10%;
+}
+
+.UnderMenu {
+  height: 90%;
+}
+
+.ColapseChild {
+  margin-left: 3%;
+}
+
+
+.Logout{
+  color:white;
+
+  :hover {
+    color: gray;
+  }
+}
+
+.MainPage {
+  color:white;
+  width:80%;
+  background-color: darkslategrey;
+}
+
+.MainPageFormContainer {
+  margin: 0% 20% 0% 20%;
+
+  .MainPageForm {
+    margin-top: -5%;
+  }
+
+  .FormButton {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+}

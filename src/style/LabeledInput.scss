@@ -1,0 +1,16 @@
+.LabeledInput {
+    display: flex;
+    flex-direction: row;
+}
+
+.LoginLabeledInput {
+    font-size: medium;
+
+    input {
+        width: 60%;
+    }
+
+    label {
+        width: 40%;
+    }
+}
