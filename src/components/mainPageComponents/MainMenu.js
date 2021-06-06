@@ -2,7 +2,7 @@ import React from 'react'
 import {Navbar, NavDropdown,Nav} from 'react-bootstrap'
 import UserService from '../../service/UserService';
 
-function MainMenu() {
+const MainMenu = () => {
 
     const logoutHandler = () => {
         UserService.logout();

@@ -32,3 +32,10 @@ export const initWebsocketConnection = () => {
     };
 }
 
+export const sendMessage = (msg) => {
+    try {
+        wsProps.client.send(msg)
+    } catch(e) {
+        console.error('Error sending message:', e);
+    }
+}

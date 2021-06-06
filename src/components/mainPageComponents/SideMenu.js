@@ -4,7 +4,7 @@ import {faUser, faList, faPlus, faPen, faIceCream} from '@fortawesome/free-solid
 import { FontLink } from '../baseComponents/FontLink.js';
 
 
-function SideMenu(props) {
+const SideMenu = (props) => {
     const labelsColor = "#1A485F";
 
     return (<Accordion className="SideMenu">
