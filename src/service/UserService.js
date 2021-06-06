@@ -2,16 +2,16 @@ import Keycloak from 'keycloak-js';
 import { Endpoints, Request } from '../request/Requests';
 
 const keycloakConfig = {
-    "clientId": "event_sorcerer_frontend",
-    "realm": "sorcerer_realm",
-    "auth-server-url": "http://localhost:8083/auth/",
-    "url": "http://localhost:8083/auth",
+    "clientId": "botomania_frontend",
+    "realm": "master",
+    "auth-server-url": "http://localhost:8080/auth/",
+    "url": "http://localhost:8080/auth",
     "ssl-required": "external",
-    "resource": "event_sorcerer",
+    "resource": "botomania_frontend",
     "public-client": true,
     "verify-token-audience": true,
     "use-resource-role-mappings": true,
-    "confidential-port": 0
+    "confidential-port": 0,
 };
 
 const keycloak = new Keycloak(keycloakConfig);

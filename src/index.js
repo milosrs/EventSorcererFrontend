@@ -6,8 +6,11 @@ import * as serviceWorker from './serviceWorker';
 import UserService from './service/UserService';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Request } from './request/Requests.js';
+import { initWebsocketConnection } from './service/WebsocketService';
 
-const render = () => {
+const initializeApplication = () => {
+  initWebsocketConnection();
+  
   ReactDOM.render(
     <React.StrictMode>
       <App />
@@ -25,7 +28,7 @@ const renderError = () => ReactDOM.render(
   document.getElementById('root')
 );
 
-UserService.initKeycloak(render, renderError);
+UserService.initKeycloak(initializeApplication, renderError);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

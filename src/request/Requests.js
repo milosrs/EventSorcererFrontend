@@ -2,7 +2,9 @@ import axios from 'axios'
 import { Utility } from '../service/Utility';
 import UserService from '../service/UserService';
 
-const serverEndpoint = 'http://localhost:8085/api';
+export const endpointUrl = 'localhost:8085';
+export const serverEndpoint = `http://${endpointUrl}/api`;
+
 const create = '/create';
 //const modify = '/modify';
 const get = '/get';

@@ -25,7 +25,8 @@
     "redux": "^4.0.5",
     "sass": "^1.26.10",
     "webpack": "4.44.2",
-    "webpack-cli": "^3.3.12"
+    "webpack-cli": "^3.3.12",
+    "websocket": "^1.0.34"
   },
   "scripts": {
     "start": "react-scripts start cd ../../../keycloak-11.0.0/bin ./standalone.bat",
