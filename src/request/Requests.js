@@ -2,6 +2,7 @@ import axios from 'axios'
 import { Utility } from '../service/Utility';
 import UserService from '../service/UserService';
 
+export const socketUrl = 'localhost:9500';
 export const endpointUrl = 'localhost:8085';
 export const serverEndpoint = `http://${endpointUrl}/api`;
 

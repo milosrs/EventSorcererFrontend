@@ -1,40 +1,45 @@
-import { w3cwebsocket as WebSocketClient } from 'websocket';
-import { endpointUrl } from '../request/Requests';
+import io from 'socket.io-client';
+import { socketUrl } from '../request/Requests';
 import UserService from './UserService';
-
-const url = `ws://${endpointUrl}/stomp`;
-const protocols = ['v10.stomp', 'v11.stomp'];
 
 const wsProps = {
     client: null,
     connection: null,
-}
+};
 
 export const initWebsocketConnection = () => {
-    protocols.push(UserService.getToken());
-    wsProps.client = new WebSocketClient(url, protocols);
+    const url = `http://${socketUrl}/botosocket`;
+    const socket = io(url, {
+        query: {
+            token: UserService.getToken(),
+        }
+    });
 
-    wsProps.client.onerror = error => {
-        console.error(`Failed to connect to ${url}. Error`, error);
-    };
+    socket.on('connect', function () {
+        console.log('<span class="connect-msg">The client has connected with the server.');
+    });
+    socket.on('chat', function (data) {
+        console.log('Received message', data);
+        console.log('<span class="username-msg">' + data.userName + ':</span> ' + data.message);
+    });
+    socket.on('disconnect', function () {
+        console.log('<span class="disconnect-msg">The client has disconnected!</span>');
+    });
+    socket.on('reconnect_attempt', (attempts) => {
+        console.log('Try to reconnect at ' + attempts + ' attempt(s).');
+    });
 
-    wsProps.client.onopen = connection => {
-        console.log(`Client connected to ${url}. ConnectionObject:`, connection);
-        wsProps.connection = connection;
-    }
+    socket.on("connect_error", (reason) => {
+        console.log(reason.message, reason.name, reason.stack)
+    });
 
-    wsProps.client.onclose = () => {
-        console.warn(`Connection to ${url} is now closed`);
-    };
-
-    wsProps.client.onmessage = msg => {
-        console.log(`Received message:`, msg);
-    };
+    wsProps.client = socket;
 }
 
-export const sendMessage = (msg) => {
+export const sendMessage = (msg = {}) => {
     try {
-        wsProps.client.send(msg)
+        wsProps.client.send(JSON.stringify(msg))
+        wsProps.client.send(JSON.stringify(msg))
     } catch(e) {
         console.error('Error sending message:', e);
     }

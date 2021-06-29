@@ -24,20 +24,20 @@ const OrderForm = (props) => {
             <Form className="MainPageForm">
                 <FormGroup controlId="name">
                     <FormLabel>Name</FormLabel>
-                    <FormControl id='name' type="text" placeholder="" onChange={this.changeHandler}></FormControl>
+                    <FormControl id='name' type="text" placeholder="" onChange={changeHandler}></FormControl>
                 </FormGroup>
 
                 <FormGroup controlId="description">
                     <FormLabel>Description</FormLabel>
-                    <Form.Control id='description' as='textarea' rows='3' onChange={this.changeHandler}/>
+                    <Form.Control id='description' as='textarea' rows='3' onChange={changeHandler}/>
                 </FormGroup>
 
                 <FormGroup controlId="price">
                     <FormLabel>Price</FormLabel>
-                    <FormControl id='price' type="number" placeholder="" onChange={this.changeHandler}></FormControl>
+                    <FormControl id='price' type="number" placeholder="" onChange={changeHandler}></FormControl>
                 </FormGroup>
 
-                <Button variant="primary" type="button" className="FormButton" onClick={this.submitHandler}>Submit</Button>
+                <Button variant="primary" type="button" className="FormButton" onClick={submitHandler}>Submit</Button>
             </Form>
         </div>
     );
